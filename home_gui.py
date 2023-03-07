@@ -126,9 +126,30 @@ def write(f):
     time.sleep(0)
     talk('Ya puedes ver tu archivo')
     sub.Popen("nota.txt", shell=True)
-    
-#Funciones de la GUI
 
+def clock(rec):
+    num = rec.replace('alarma', '')
+    num = num.strip()
+    talk('Alarma activada a las ' + num + 'horas')
+    if num[0] != '0' and len (num) < 5:
+        num = "0" + num
+    print(num)
+    while True:
+        if datetime.datetiem.now().strftime('%H:%M') == num:
+            print("Sonando Alarma!")
+            mixer.init()
+            mixer.music.load(r'media\audios\alarma.mp3')
+            mixer.music.play()
+        else:
+            continue
+        if keyboard.read_key()=="s":
+            mixer.music.stop()
+            break
+        
+#Funciones de la GUI
+def write_text(text_wiki):
+    text_info.insert(INSERT, text_wiki)
+    
 def read_and_talk():
     text = text_info.get("1.0", "end")
     talk(text)
@@ -147,23 +168,13 @@ def run_sofia():
             search = rec.replace('busca', '')
             wikipedia.set_lang('es')
             wiki = wikipedia.summary(search, 1)
-            print(search +": " + wiki)
             talk(wiki)
-        
+            write_text(search +": " + wiki)
+            break
         elif 'alarma' in rec:
-            num = rec.replace('alarma', '')
-            num = num.strip()
-            talk('Alarma activada a las ' + num + 'horas')
-            while True:
-                if datetime.datetiem.now().strftime('%H:%M') == num:
-                    print("Sonando Alarma!")
-                    mixer.init()
-                    mixer.music.load('media\audios\Alarma001.mp3')
-                    mixer.music.play()
-                    if keyboard.read_key()=="s":
-                        mixer.music.stop()
-                        break
-                    
+            t=tr.Thread(target=clock, args=(rec, ))
+            t.start()
+                
         elif 'colores' in rec:
             talk('Enseguida')
             colors.capture()
