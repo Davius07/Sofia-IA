@@ -18,6 +18,7 @@ import threading as tr
 #variables de interfas gui
 numero_de_version = str("v1.1")
 color_de_fondo = "#ffe0ff"
+color_de_momento = "#ffe0ff"
 
 
 #Ventana
@@ -27,9 +28,38 @@ main_window.geometry('800x400')
 main_window.resizable(0,0)
 main_window.configure(bg="#ffe0ff")
 
+
+
+
+#variables de funcionalidad
+
+comandos="""\n\n\n\n\n\n\n
+    Comandos
+    
+    - Reproduce
+    
+    - Busca
+    
+    - Alarma
+    
+    - Colores
+    
+    - Abre
+    
+    - Archivo
+    
+    - Escribe
+
+    - Salir
+"""
+name = "sofia"
+listener = sr.Recognizer()
+engine = pyttsx3.init()
+
 #variables de archivos
 titulo_photo = ImageTk.PhotoImage(Image.open(r"media\icons\Titulo.png"))
 sofia_photo = ImageTk.PhotoImage(Image.open(r"media\icons\Sofia.png"))
+iniciar_photo = ImageTk.PhotoImage(Image.open(r"media\icons\Iniciar.png"))
 
 #Titulo
 label_title = Label(main_window, image=titulo_photo, bg=color_de_fondo, border=0, relief=FLAT)
@@ -38,10 +68,13 @@ label_title.pack(pady=5)
 label_title = Label(main_window, image=sofia_photo, bg=color_de_fondo, border=0, relief=FLAT)
 label_title.pack(pady=5)
 
-#variables de funcionalidad
-name = "sofia"
-listener = sr.Recognizer()
-engine = pyttsx3.init()
+label_title = Label(main_window, image=iniciar_photo, bg=color_de_fondo, border=0, relief=FLAT, cursor="hand2")
+label_title.pack(pady=5)
+
+canvas_comandos = Canvas(bg=color_de_momento, height=270, width=200, bd=0, relief=FLAT)
+canvas_comandos.place(x=30, y=10)
+canvas_comandos.create_text(90, 80, text=comandos, fill="black", font="Arial 9")
+
 
 voices = engine.getProperty("voices")
 engine.setProperty("voice", voices[0].id)
