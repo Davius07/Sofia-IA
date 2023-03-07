@@ -6,7 +6,7 @@ from pygame import mixer
 
 #del sistema
 
-#import colors
+#from colors import capture
 import os, time, platform, datetime
 import subprocess as sub
 from tkinter import *
@@ -19,7 +19,7 @@ import threading as tr
 numero_de_version = str("v1.1")
 
 #variables de archivos
-sofia_photo= ImageTk.PhotoImage(Image.open(r"media\icons\Sofia - IA.png"))
+sofia_photo = ImageTk.PhotoImage(Image.open(r"Sofia.png"))
 
 #Ventana
 main_window= Tk()
