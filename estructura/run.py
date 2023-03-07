@@ -24,10 +24,11 @@ os.system('pip install speech_recognition')
 cargando = 16
 iniciando()
 os.system('pip install pywhatkit')
-os.system('pip install PIL')
+os.system('pip install tkinter')
 cargando = 32
 iniciando()
 os.system('pip install wikipedia')
+os.system('pip install PIL')
 cargando = 48
 iniciando()
 os.system('pip install pywhatkit')
