@@ -61,31 +61,35 @@ titulo_photo = ImageTk.PhotoImage(Image.open(r"media\icons\Titulo.png"))
 sofia_photo = ImageTk.PhotoImage(Image.open(r"media\icons\Sofia.png"))
 iniciar_photo = ImageTk.PhotoImage(Image.open(r"media\icons\Iniciar.png"))
 leer_photo = ImageTk.PhotoImage(Image.open(r"media\icons\Leer Texto.png"))
+archivos_photo = ImageTk.PhotoImage(Image.open(r"media\icons\Archivos.png"))
+paginas_photo = ImageTk.PhotoImage(Image.open(r"media\icons\Paginas.png"))
 
 
 voices = engine.getProperty("voices")
 engine.setProperty("voice", voices[0].id)
 engine.setProperty("rate", 145)
 
-sites={
-    'google' : 'google.com',
-    'youtube' : 'youtube.com',
-    'facebook' : 'facebook.com',
-    'whatsapp' : 'web.whatsapp.com',
-    'classroom' : 'classroom.google.com/u/1/h',
-}
+sites=dict()
+#{
+#    'google' : 'google.com',
+#    'youtube' : 'youtube.com',
+#    'facebook' : 'facebook.com',
+#   'whatsapp' : 'web.whatsapp.com',
+#   'classroom' : 'classroom.google.com/u/1/h',
+#}
 
 files={
        
 }
 
-programs={
-    "navegador" : "Brave.exe",
-    "spotify" : "Spotify.exe",
-    "whatsapp" : "Whatsapp.exe",
-    "discord" : "Discord.exe",
-    "editor de codigo" : "code.exe"
-}
+programs=dict()
+#{
+#   "navegador" : "Brave.exe",
+#    "spotify" : "Spotify.exe",
+#    "whatsapp" : "Whatsapp.exe",
+#    "discord" : "Discord.exe",
+#    "editor de codigo" : "code.exe"
+#}
 
 #Funciones
 
