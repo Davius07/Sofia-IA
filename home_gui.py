@@ -104,7 +104,7 @@ def talk(text):
 def listen():
     listener = sr.Recognizer()     
     with sr.Microphone() as source:
-        talk("te estoy escuchando.")
+        print("Escuchando...")
         listener.adjust_for_ambient_noise(source)
         pc = listener.listen(source)
 

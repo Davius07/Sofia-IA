@@ -5,7 +5,7 @@ import speech_recognition as sr
 import pyttsx3, pywhatkit, wikipedia, keyboard
 from pygame import mixer
 #del sistema
-import colors as colors
+#import colors as colors
 import os, time, platform, datetime
 import subprocess as sub
 
