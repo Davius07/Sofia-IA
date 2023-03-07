@@ -18,8 +18,7 @@ import threading as tr
 #variables de interfas gui
 numero_de_version = str("v1.1")
 
-#variables de archivos
-sofia_photo = ImageTk.PhotoImage(Image.open(r"Sofia.png"))
+
 
 #Ventana
 main_window= Tk()
@@ -28,8 +27,12 @@ main_window.geometry('800x400')
 main_window.resizable(0,0)
 main_window.configure(bg="#ffa8d9")
 
+#variables de archivos
+sofia_photo = ImageTk.PhotoImage(Image.open(r"Sofia.png"))
+
 #Titulo
 label_title = Label(main_window, image=sofia_photo)
+label_title.pack(pady=5)
 
 #variables de funcionalidad
 name = "sofia"
