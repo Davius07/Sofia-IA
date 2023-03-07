@@ -6,7 +6,7 @@ from pygame import mixer
 
 #del sistema
 
-import colors as colors
+#import colors
 import os, time, platform, datetime
 import subprocess as sub
 from tkinter import *
@@ -20,6 +20,7 @@ numero_de_version = str("v1.1")
 
 #variables de archivos
 sofia_photo= ImageTk.PhotoImage(Image.open(r"media\icons\Sofia - IA.png"))
+
 #Ventana
 main_window= Tk()
 main_window.title(f'Sofia - IA  [{numero_de_version}] ')
@@ -28,7 +29,7 @@ main_window.resizable(0,0)
 main_window.configure(bg="#ffa8d9")
 
 #Titulo
-label_title = Label(main_window, text='Sofia - IA')
+label_title = Label(main_window, image=sofia_photo)
 
 #variables de funcionalidad
 name = "sofia"
