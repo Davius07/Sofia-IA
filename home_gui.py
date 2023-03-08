@@ -6,7 +6,7 @@ from pygame import mixer
 
 #del sistema
 
-#from colors import capture
+import colors
 import os, time, platform, datetime
 import subprocess as sub
 from tkinter import *
