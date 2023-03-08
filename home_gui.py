@@ -206,10 +206,10 @@ def run_sofia():
 #GUI
 
 #variables de archivos
-titulo_photo = ImageTk.PhotoImage(Image.open(r"media\icons\Titulo.png"))
-sofia_photo = ImageTk.PhotoImage(Image.open(r"media\icons\Sofia.png"))
-iniciar_photo = ImageTk.PhotoImage(Image.open(r"media\icons\Iniciar.png"))
-leer_photo = ImageTk.PhotoImage(Image.open(r"media\icons\Leer Texto.png"))
+titulo_photo = ImageTk.PhotoImage(Image.open(r"Titulo.png"))
+sofia_photo = ImageTk.PhotoImage(Image.open(r"Sofia.png"))
+iniciar_photo = ImageTk.PhotoImage(Image.open(r"Iniciar.png"))
+leer_photo = ImageTk.PhotoImage(Image.open(r"Leer Texto.png"))
 
 #Titulo
 label_title = Label(main_window, image=titulo_photo, bg=color_de_fondo, border=0, relief=FLAT)
