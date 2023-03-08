@@ -56,12 +56,6 @@ name = "sofia"
 listener = sr.Recognizer()
 engine = pyttsx3.init()
 
-#variables de archivos
-titulo_photo = ImageTk.PhotoImage(Image.open(r"media\icons\Titulo.png"))
-sofia_photo = ImageTk.PhotoImage(Image.open(r"media\icons\Sofia.png"))
-iniciar_photo = ImageTk.PhotoImage(Image.open(r"media\icons\Iniciar.png"))
-leer_photo = ImageTk.PhotoImage(Image.open(r"media\icons\Leer Texto.png"))
-
 
 voices = engine.getProperty("voices")
 engine.setProperty("voice", voices[0].id)
@@ -177,7 +171,7 @@ def run_sofia():
                 
         elif 'colores' in rec:
             talk('Enseguida')
-            colors.capture()
+            colors.capture
             
         elif 'abre' in rec:
             for site in sites:
@@ -209,7 +203,14 @@ def run_sofia():
             talk('saliendo del sistema')
             break
 
-#GUI 
+#GUI
+
+#variables de archivos
+titulo_photo = ImageTk.PhotoImage(Image.open(r"media\icons\Titulo.png"))
+sofia_photo = ImageTk.PhotoImage(Image.open(r"media\icons\Sofia.png"))
+iniciar_photo = ImageTk.PhotoImage(Image.open(r"media\icons\Iniciar.png"))
+leer_photo = ImageTk.PhotoImage(Image.open(r"media\icons\Leer Texto.png"))
+
 #Titulo
 label_title = Label(main_window, image=titulo_photo, bg=color_de_fondo, border=0, relief=FLAT)
 label_title.pack(pady=5)
