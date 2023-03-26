@@ -16,7 +16,7 @@ import threading as tr
 
 # Variables Iniciadas
 #variables de interfas gui
-numero_de_version = str("v1.1")
+numero_de_version = str("v2.3.5")
 color_de_fondo = "#ffe0ff"
 color_de_momento = "#89004f"
 
@@ -61,25 +61,11 @@ voices = engine.getProperty("voices")
 engine.setProperty("voice", voices[0].id)
 engine.setProperty("rate", 145)
 
-sites={
-    'google' : 'google.com',
-    'youtube' : 'youtube.com',
-    'facebook' : 'facebook.com',
-    'whatsapp' : 'web.whatsapp.com',
-    'classroom' : 'classroom.google.com/u/1/h',
-}
+sites=dict()
 
-files={
-       
-}
+files=dict()
 
-programs={
-    "navegador" : "Brave.exe",
-    "spotify" : "Spotify.exe",
-    "whatsapp" : "Whatsapp.exe",
-    "discord" : "Discord.exe",
-    "editor de codigo" : "code.exe"
-}
+programs=dict()
 
 #Funciones
 
@@ -148,6 +134,12 @@ def read_and_talk():
     text = text_info.get("1.0", "end")
     talk(text)
 
+def open_w_pages():
+    windows_pages = Toplevel()
+    windows_pages.title("Archivos de Paginas   |  Sofia - IA")
+    windows_pages.configure(bg=color_de_fondo)
+    windows_pages.geometry("300x200")
+
 #Funcion Principal
 def run_sofia():
     while True:
@@ -210,6 +202,8 @@ titulo_photo = ImageTk.PhotoImage(Image.open(r"Titulo.png"))
 sofia_photo = ImageTk.PhotoImage(Image.open(r"Sofia.png"))
 iniciar_photo = ImageTk.PhotoImage(Image.open(r"Iniciar.png"))
 leer_photo = ImageTk.PhotoImage(Image.open(r"Leer Texto.png"))
+apps_photo = ImageTk.PhotoImage(Image.open(r"apps.png"))
+pages_photo = ImageTk.PhotoImage(Image.open(r"paginas.png"))
 
 #Titulo
 label_title = Label(main_window, image=titulo_photo, bg=color_de_fondo, border=0, relief=FLAT)
@@ -232,7 +226,15 @@ text_info.place(x=590, y=10, height=270, width=200,)
 button_leer = Button(main_window, image=leer_photo, bg=color_de_fondo, border=0, 
                     relief=FLAT, cursor="hand2", command=read_and_talk)
 button_leer.place(x=10, y=300)
-        
+
+button_pages = Button(main_window, image=pages_photo, bg=color_de_fondo, border=0, 
+                    relief=FLAT, cursor="hand2", command=open_w_pages)
+button_pages.place(x=220, y=300)
+
+button_apps = Button(main_window, image=apps_photo, bg=color_de_fondo, border=0, 
+                    relief=FLAT, cursor="hand2", command=open_w_apps)
+button_apps.place(x=430, y=300)
+
 
 #Iniciador loop de la ventana
 main_window.mainloop()
